@@ -7,7 +7,7 @@ package Class::AccessorMaker::Private;
 use strict;
 no strict 'refs';
 
-our $VERSION = "0.2";
+our $VERSION = "1.0";
 
 use Carp;
 
@@ -91,16 +91,14 @@ __END__
 
 =head1 NAME
 
-Class::AccessorMaker::Private
-
-generate private accessor method with default values.
+Class::AccessorMaker::Private - generate private accessor method with default values.
 
 =head1 DESCRIPTION
 
 For further SYNOPSIS, DESCRIPTION and PITFALLS please read the perldoc of
 Class::AccessorMaker.
 
-This 'AccessorMaker' makes you private methods. Actualy the methods are
+This 'AccessorMaker' makes you private methods. Actually the methods are
 accessible from just about anywhere you like em to, but the data
 structure that lies beneath it all is hidden in a far away place. This
 forces the users of your object to actually use the acccessor methods,
@@ -116,9 +114,9 @@ AccessorMaker::Private does not even give your object reachable data,
 but the object self is a blessed hash, be it very empty, so you can
 use that...
 
-But if you wish to use global-data for it, be my guess, not that I
+But if you wish to use global-data for it, be my guest, not that I
 advice it, cause it is generally a bad idea to use global data, and if
-you use it, you do bot even need accessor methods, right?
+you use it, you do not even need accessor methods, right?
 
 =head2 an example:
 
@@ -133,7 +131,7 @@ you use it, you do bot even need accessor methods, right?
       return $self;
     } 
 
-    return $self->{returnPath};
+    return $self->{seperator};
   }
 
 I think I can skip a code explanation, right?
@@ -144,7 +142,7 @@ Hartog 'Sinister' de Mik <hartog@2organize.com>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2001-20022 R. Geoffrey Avery. All rights reserved.  This
+Copyright (c) 2002 Hartog C. de Mik. All rights reserved.  This
 program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 

@@ -7,7 +7,7 @@ package Class::AccessorMaker;
 use strict;
 no strict 'refs';
 
-our $VERSION = "0.2";
+our $VERSION = "1.0";
 
 use Carp;
 
@@ -87,8 +87,7 @@ __END__
 
 =head1 NAME
 
-Class::AccessorMaker - 
-generate accessor methods with default values.
+Class::AccessorMaker - generate accessor methods with default values.
 
 =head1 SYNOPSIS
 
@@ -150,7 +149,7 @@ there...
 
 The AccesorMaker takes in, at use-time, a hash-reference and an extra
 keyword. It uses the keys of the hash-reference to create
-accessor-methods in the namespace of the caller. The values that are
+accessor-methods in the name-space of the caller. The values that are
 given to the keys are the default value of the accessor.
 
 Class::AccessorMaker will create a constructor (called C<new()>) by
@@ -166,14 +165,14 @@ expects your object to be a hash-reference.
 
 test the value of my accessor or perhaps even slightly alter it...
 
-To bad, Class:AccessorMaker does not do this for you. You will have to
+Too bad, Class:AccessorMaker does not do this for you. You will have to
 write your own accessor method. It is up to you how you write it, but
-it would be wise to keep the objects datastructure, which is just a
+it would be wise to keep the objects data-structure, which is just a
 plain hash if you let Class::AccessorMaker make the constructor.
 
-But if you wish to use global-data for it, be my guess, not that I
+But if you wish to use global-data for it, be my guest, not that I
 advice it, cause it is generally a bad idea to use global data, and if
-you use it, you do bot even need accessor methods, right?
+you use it, you do not even need accessor methods, right?
 
 =head2 an example:
 
@@ -188,7 +187,7 @@ you use it, you do bot even need accessor methods, right?
       return $self;
     } 
 
-    return $self->{returnPath};
+    return $self->{seperator};
   }
 
 I think I can skip a code explanation, right?
@@ -197,9 +196,9 @@ I think I can skip a code explanation, right?
 =head1 NOW HERE THIS
 
 This module is still under some sort of development, and I am
-expecting to release things like ReadOnly / WriteOnce accessor methods
-in the near future. I alredy have Class::AccessorMaker::Private out
-there for you, which could prove to be very usefull for you.
+expecting to release things like ReadOnly / WriteOnce accessors methods
+in the near future. I already have Class::AccessorMaker::Private out
+there for you, which could prove to be very useful for you.
 
 =head1 PITFALLS
 
@@ -219,7 +218,7 @@ Hartog 'Sinister' de Mik <hartog@2organize.com>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2001-20022 R. Geoffrey Avery. All rights reserved.  This
+Copyright (c) 2002 Hartog C. de Mik. All rights reserved.  This
 program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
