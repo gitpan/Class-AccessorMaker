@@ -7,7 +7,7 @@ package Class::AccessorMaker;
 use strict;
 no strict 'refs';
 
-our $VERSION = "1.0";
+our $VERSION = "1.11";
 
 use Carp;
 
@@ -58,7 +58,23 @@ sub import {
       my ( $self, $value ) = @_;
 
       # fill with default at first run
-      $self->{$sub} = $subs->{$sub} if !exists $self->{$sub};
+      if ( !exists $self->{$sub} ) {
+	my $val = $subs->{$sub};
+	my $rval = ref($val);
+	if (!$rval) {
+	  #scalar
+	  $self->{$sub} = $val;
+	} elsif ($rval =~ /ARRAY/) {
+	  my @val = @{$val};
+	  $self->{$sub} = \@val;
+	} elsif($rval =~ /HASH/) {
+	  my %val = %{$val};	
+	  $self->{$sub} = \%val;
+	} else {
+	  #object ref.. use at own risk.
+	  $self->{$sub} = $val;	      
+	}
+      }
 
       # more then just self, something has to be set.
       if ($#_ > 0) {
